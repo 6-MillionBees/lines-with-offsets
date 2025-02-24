@@ -24,10 +24,10 @@ def main_events():
 
 
 def draw_offset_lines(surface, color, start_pos, end_pos, offset, weight, num_of_lines):
-  og_offset = offset
   for x in range(num_of_lines):
-    pygame.draw.line(surface, color, config.add(start_pos, offset), config.add(end_pos, offset), weight)
-    offset = tuple(num1 + num2  for num1, num2 in zip(offset, og_offset))
+    pygame.draw.line(surface, color, start_pos, end_pos, weight)
+    start_pos = config.add(start_pos, offset)
+    end_pos = config.add(end_pos, offset)
 
 
 # Main loop
