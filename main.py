@@ -23,12 +23,18 @@ def main_events():
   return True
 
 
+def draw_offset_lines(surface, color, start_pos, end_pos, offset, weight, num_of_lines):
+  og_offset = offset
+  for x in range(num_of_lines):
+    pygame.draw.line(surface, color, config.add(start_pos, offset), config.add(end_pos, offset), weight)
+    offset = tuple(num1 + num2  for num1, num2 in zip(offset, og_offset))
+
 
 # Main loop
 def main():
   # The bool for the main loop
   running = True
-  
+
   while running:
 
     # Call events / update running
@@ -36,6 +42,9 @@ def main():
 
     # Fills window
     screen.fill(config.WHITE)
+
+    # Draws lines
+    draw_offset_lines(screen, config.BLUE, (20, 50), (30, 5), config.OFFSET, 2, 10)
 
     # Updates the Display
     pygame.display.flip()
