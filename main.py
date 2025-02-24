@@ -1,6 +1,6 @@
 # Arden Boettcher
-# 2/11/25
-# Pygame Template
+# 2/24/25
+# Lines with offset
 
 import pygame
 import config

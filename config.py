@@ -1,6 +1,6 @@
 # Arden Boettcher
-# 2/11/25
-# Template Config
+# 2/24/25
+# Config
 
 # Screen size constants
 WIDTH = 500
